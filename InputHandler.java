@@ -1,23 +1,29 @@
+/**
+ * A class that will handle all input for the Command Design Pattern.
+ *
+ * @author Ethan Adams
+ */
+import java.util.HashMap;
 public class InputHandler {
-  private HashMap<String, command> commands;
+  private HashMap<String, Command> commands;
 
   public InputHandler(Player player) {
-    this.commands = new HashMap<String, command>();
-    this.commands.put("jump", JumpCommand);
-    this.commands.put("run", RunCommand);
-    this.commands.put("fire", FireCommand);
-    this.commands.put("quit", QuitCommand);
+    this.commands = new HashMap<String, Command>();
+    this.commands.put("jump", JumpCommand(player));
+    this.commands.put("run", RunCommand(player);
+    this.commands.put("fire", FireCommand(player);
+    this.commands.put("quit", QuitCommand(player));
   }
 
   public void buttonPressed(String button) {
     if (button.equalsIgnoreCase("jump")) {
-      JumpCommand();
+      this.commands.get("jump").execute();
     } else if (button.equalsIgnoreCase("run")) {
-      RunCommand();
+      this.commands.get("run").execute();
     } else if (button.equalsIgnoreCase("fire")) {
-      FireCommand();
+      this.commands.get("fire").execute();
     } else if (button.equalsIgnoreCase("quit")) {
-      QuitCommand();
+      this.commands.get("quit").execute();
     }
   }
 }
