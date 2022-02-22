@@ -1,16 +1,21 @@
 public class Player {
 
-    public Player() {
-        System.out.println("Our Hero is Born");
-    }
+  public Player() {
+    System.out.println("Our Hero is Born");
+  }
 
-    public static void jump() {
-    }
+  public void jump() {
+    Command jc = new JumpCommand(this);
+    jc.execute();
+  }
 
-    public static void fire() {
-    }
+  public void fire() {
+    Command f = new FireCommand(this);
+    f.execute();
+  }
 
-    public static void runForward() {
-    }
-
+  public void runForward() {
+    Command rf = new RunCommand(this);
+    rf.execute();
+  }
 }
