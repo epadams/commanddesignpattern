@@ -8,52 +8,54 @@ import java.util.concurrent.TimeUnit;
  * @author Will Columbia
  */
 public class FireCommand implements Command{
-    /**
-     * reads in fire.txt and loops through 3 lines before resting and clearing the console
-     * @param player
-     */
-    public void FireCommand(Player player){
-        
-        File myFile = new File("fire.txt");
-        try {
-            String line = null;
-            BufferedReader br = new BufferedReader(new FileReader(myFile));
-            while((line = br.readLine()) != null){
-                for(int i = 0;i<4;i++){
-                    System.out.println(line);
-                    sleep(3);
-                    clear();
-                }
-            }
 
-        } 
-        catch (IOException e) {
-            e.printStackTrace();
+  /**
+   * Reads in fire.txt and loops through 3 lines before resting and clearing the console
+   * @param player
+   */
+  public FireCommand(Player player){
+
+  }
+
+  /**
+   * Executes the fire command
+   */
+  @Override
+  public void execute(){
+    File myFile = new File("fire.txt");
+    try {
+      String line = null;
+      BufferedReader br = new BufferedReader(new FileReader(myFile));
+      while((line = br.readLine()) != null){
+        for(int i = 0;i<4;i++){
+          System.out.println(line);
+          sleep(3);
+          clear();
         }
+      }
+      br.close();
+    } catch (IOException e) {
+      e.printStackTrace();
     }
-    /**
-     * Executes the fire command
-     */
-    @Override
-    public void execute(){
-        Player.fire();
+  }
+
+  /**
+   * Allows for a brief sleep period 
+   * @param num
+   */
+  private void sleep(int num){
+    try {
+      TimeUnit.MILLISECONDS.sleep(num);
+    } 
+    catch (Exception e) {
+      System.out.println("Timmer error");
     }
-    /**
-     * Allows for a brief sleep period 
-     * @param num
-     */
-    private void sleep(int num){
-        try {
-            TimeUnit.MILLISECONDS.sleep(num);
-        } 
-        catch (Exception e) {
-            System.out.println("Timmer error");
-        }
-    }
-    /**
-     * clears the console
-     */
-    private void clear() {
-        System.out.print("\033[H\033[2J");
-    }
+  }
+
+  /**
+   * Clears the console
+   */
+  private void clear() {
+    System.out.print("\033[H\033[2J");
+  }
 }

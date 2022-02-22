@@ -17,7 +17,7 @@ public class InputHandler {
     this.commands.put("jump", new JumpCommand(player));
     this.commands.put("run", new RunCommand(player));
     this.commands.put("fire", new FireCommand(player));
-    this.commands.put("quit", new QuitCommand(player));
+    this.commands.put("quit", new QuitCommand());
   }
 
   /**
@@ -34,6 +34,8 @@ public class InputHandler {
       this.commands.get("fire").execute();
     } else if (button.equalsIgnoreCase("quit")) {
       this.commands.get("quit").execute();
+    } else {
+      System.out.println("Input invalid, try:\njump\nrun\nfire\nquit\n");
     }
   }
 }
