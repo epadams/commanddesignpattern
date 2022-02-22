@@ -4,13 +4,13 @@ public class Player {
         System.out.println("Our Hero is Born");
     }
 
-    public void jump() {
+    public static void jump() {
     }
 
-    public void fire() {
+    public static void fire() {
     }
 
-    public void runForward() {
+    public static void runForward() {
     }
 
 }
