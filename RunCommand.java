@@ -42,7 +42,6 @@ public class RunCommand implements Command {
             e.printStackTrace();
         }
     }
-
     /**
      * Pauses the program temporarily
      * 
@@ -54,7 +53,7 @@ public class RunCommand implements Command {
         } catch (Exception e) {
             System.out.println("Timer error");
         }
-    }
+   }
 
     /**
      * Clears the console
