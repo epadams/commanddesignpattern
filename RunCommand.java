@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
+
 public class RunCommand implements Command {
 
   public RunCommand(Player player) {
@@ -10,16 +11,18 @@ public class RunCommand implements Command {
   }
 
   public void execute() {
-    File myFile = new File("fire.txt");
+    File myFile = new File("run.txt");
     try {
-      String line = null;
+      String line = "";
       BufferedReader br = new BufferedReader(new FileReader(myFile));
-      while((line = br.readLine()) != null){
-        for(int i = 0;i<4;i++){
+      // while((line = br.readLine()) != null) {
+      while (line != null) {
+        for (int i = 0; i < 3; i++) {
+          line = br.readLine();
           System.out.println(line);
-          sleep(3);
-          clear();
         }
+        sleep(50);
+        clear();
       }
       br.close();
     } catch (IOException e) {
@@ -27,11 +30,10 @@ public class RunCommand implements Command {
     }
   }
 
-  private void sleep(int num){
+  private void sleep(int num) {
     try {
       TimeUnit.MILLISECONDS.sleep(num);
-    } 
-    catch (Exception e) {
+    } catch (Exception e) {
       System.out.println("Timmer error");
     }
   }
