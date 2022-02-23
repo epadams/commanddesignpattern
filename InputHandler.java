@@ -1,9 +1,10 @@
+import java.util.HashMap;
 /**
  * A class that will handle all input for the Command Design Pattern.
  *
  * @author Ethan Adams
  */
-import java.util.HashMap;
+
 public class InputHandler {
   private HashMap<String, Command> commands;
 
