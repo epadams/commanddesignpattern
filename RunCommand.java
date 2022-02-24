@@ -27,6 +27,7 @@ public class RunCommand implements Command {
         try {
             BufferedReader bReader = new BufferedReader(new FileReader(myFile));
             String line = bReader.readLine();
+            clear();
             while (line != null) {
                 for (int i = 0; i < 3; i++) {
                     System.out.println(line);
@@ -34,7 +35,7 @@ public class RunCommand implements Command {
                         break;
                     }
                 }
-                sleep(1000);
+                sleep(100);
                 clear();
             }
             bReader.close();
@@ -53,7 +54,7 @@ public class RunCommand implements Command {
         } catch (Exception e) {
             System.out.println("Timer error");
         }
-   }
+    }
 
     /**
      * Clears the console
