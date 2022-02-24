@@ -27,15 +27,17 @@ public class FireCommand implements Command {
   public void execute() {
     File myFile = new File("fire.txt");
     try {
-      String line = "";
       BufferedReader br = new BufferedReader(new FileReader(myFile));
-      // while((line = br.readLine()) != null) {
+      String line = br.readLine();
+      clear();
       while (line != null) {
         for (int i = 0; i < 3; i++) {
-          line = br.readLine();
           System.out.println(line);
+          if ((line = br.readLine()) == null) {
+            break;
+          }
         }
-        sleep(50);
+        sleep(100);
         clear();
       }
       br.close();
