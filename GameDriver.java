@@ -1,7 +1,10 @@
 // package command;
 
 import java.util.Scanner;
-
+/**
+ * this class is used to drive the game. Carrie our main adn controls display to console
+ * @author Ethan Adams
+ */
 public class GameDriver {
 
   public static void main(String[] args) {
