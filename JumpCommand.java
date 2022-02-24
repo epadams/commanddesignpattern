@@ -35,7 +35,7 @@ public class JumpCommand implements Command {
           line = br.readLine();
           System.out.println(line);
         }
-        sleep(50);
+        sleep(25);
         clear();
       }
       br.close();
