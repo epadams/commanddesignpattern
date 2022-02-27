@@ -7,7 +7,15 @@ import java.util.concurrent.TimeUnit;
  */
 public class QuitCommand implements Command {
     private Player player;
-    
+
+    /**
+     * this method create our quit command for the player
+     * @param player the player we want to quit the game
+     */
+    public QuitCommand(Player player) {
+
+    }
+
     /**
      * Executes the command
      */
