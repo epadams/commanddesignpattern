@@ -13,7 +13,7 @@ public class QuitCommand implements Command {
      * @param player the player we want to quit the game
      */
     public QuitCommand(Player player) {
-
+        this.player = player;
     }
 
     /**

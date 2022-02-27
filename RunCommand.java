@@ -11,14 +11,14 @@ import java.util.concurrent.TimeUnit;
  */
 public class RunCommand implements Command {
     private Player player;
-    
+
     /**
      * Constructs the RunCommand
      * 
      * @param player The player to move
      */
     public RunCommand(Player player) {
-
+        this.player = player;
     }
 
     /**

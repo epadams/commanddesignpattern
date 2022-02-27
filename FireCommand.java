@@ -11,14 +11,14 @@ import java.util.concurrent.TimeUnit;
 
 public class FireCommand implements Command {
   private Player player;
-  
+
   /**
    * Reads in fire.txt and loops through 3 lines before resting and clearing the console
    *
    * @param player Player to be passed in.
    */
   public FireCommand(Player player) {
-
+    this.player=player;
   }
 
   /**
