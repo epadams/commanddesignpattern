@@ -10,6 +10,8 @@ import java.util.concurrent.TimeUnit;
  * @author Grant King
  */
 public class RunCommand implements Command {
+    private Player player;
+    
     /**
      * Constructs the RunCommand
      * 

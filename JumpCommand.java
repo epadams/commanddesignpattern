@@ -10,6 +10,8 @@ import java.util.concurrent.TimeUnit;
  */
 
 public class JumpCommand implements Command {
+  private Player player;
+  
   /**
    * Reading in the file jump.txt, displays 6 lines of the file at a time,
    * sleeps then resets the console.

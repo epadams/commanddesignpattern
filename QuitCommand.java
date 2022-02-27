@@ -6,6 +6,8 @@ import java.util.concurrent.TimeUnit;
  * @author Grant King
  */
 public class QuitCommand implements Command {
+    private Player player;
+    
     /**
      * Executes the command
      */
